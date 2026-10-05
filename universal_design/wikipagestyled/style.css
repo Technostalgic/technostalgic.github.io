@@ -5,17 +5,11 @@
     --foreground: #F7F4FF;
     --faded: #B599FF;
 }
-
+html {
+	background: var(--background);
+}
 body {
     font-family: "Germania One", sans-serif;
-}
-
-h1,
-h2,
-h3 {
-    font-family: "Manufacturing Consent", serif;
-}
-body {
 	right: 0;
 	background: var(--background);
 	color: var(--foreground);
@@ -23,6 +17,11 @@ body {
 	max-width: 800px;
 	margin: 0 auto;
 	padding-left: 150px;
+}
+h1,
+h2,
+h3 {
+    font-family: "Manufacturing Consent", serif;
 }
 nav {
 	left: 0;
