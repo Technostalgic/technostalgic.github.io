@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;700&display=swap');
+
+:root {
+    --background: #0B1026;
+    --foreground: #F2F4FF;
+    --faded: #A9BCFF;
+}
+html {
+	background: var(--background);
+}
+body {
+    font-family: "Inter", sans-serif;
+	right: 0;
+	background: var(--background);
+	color: var(--foreground);
+	line-height: 1.5;
+	max-width: 500px;
+	margin: 0 auto;
+	padding-left: 150px;
+}
+h1,
+h2,
+h3 {
+    font-family: "Orbitron", sans-serif;
+}
+nav {
+	left: 0;
+	border-right: solid 1px #FDA2;
+	padding: 16px;
+	position: fixed;
+}
+nav ul {
+	list-style: none;
+	padding: 0;
+}
+a {
+	color: var(--foreground);
+    text-decoration: underline;
+}
+a:visited {
+    color: var(--faded);
+    text-decoration: underline;
+}
+img {
+	max-width: 100%;
+}
+table {
+	border-collapse: collapse;
+	margin: 1rem 0;
+}
+th,
+td {
+	border: 1px solid #666666;
+	padding: 0.25rem 0.5rem;
+	text-align: left;
+}
+label,
+input,
+select,
+textarea,
+button {
+	display: block;
+	font-family: inherit;
+	font-size: 1rem;
+	margin-bottom: 0.5rem;
+}
+fieldset label,
+fieldset input {
+	display: inline;
+}
+fieldset {
+	margin-bottom: 1rem;
+}
+.material-symbols-outlined {
+	vertical-align: middle;
+}
+.skip-link,
+.skip-link:visited {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	padding: 8px 16px;
+	background: var(--foreground);
+	color: var(--background);
+	transform: translateY(-100%);
+	transition: transform 0.3s;
+}
+.skip-link:focus {
+	transform: translateY(0);
+}
+.sr-only {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
