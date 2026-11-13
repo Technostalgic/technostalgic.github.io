@@ -1,34 +1,137 @@
-nav {
-    padding: 8px 16px 8px 16px;
-    border-bottom: solid 1px #FDA2;
+:root {
+    --background: #222;
+    --panel: #2A2A2A;
+    --foreground: #FDA;
+    --faded: #FDA4;
 }
 
-nav ul {
-    display: inline-block;
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-nav ul li {
-    display: inline-block;
-    margin-right: 10px;
+header,
+nav,
+main,
+aside,
+footer {
+    padding: 1.5em;
+    border: 1px var(--faded) solid;
 }
 
 body {
-    margin: 0;
-    background-color: #222;
-    color: #FDA;
-    font-family: monospace;
-    font-size: 16px;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: monospace;
+  font-weight: 300;
+  font-size: 15px;
 }
 
-.main-column {
-    max-width: 500px;
-    margin: auto;
+header,
+footer {
+    text-align: center;
 }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--background);
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns:
+        1fr 2fr 1fr;
+    grid-template-areas:
+        "heady     heady     heady"
+        "navvy     navvy     navvy"
+        "aside1    mainy     aside2"
+        "aside1    mainy     aside2"
+        "aside1    mainy     aside2"
+        "footy     footy     footy";
+}
+
+@media screen and (min-width: 640px) and (max-width: 900px) {
+    .container {
+        grid-template-columns:
+            1fr 1fr;
+        grid-template-areas:
+            "heady heady"
+            "navvy navvy"
+            "mainy mainy"
+            "aside1 aside2"
+            "footy footy";
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        grid-template-columns:
+            1fr;
+        grid-template-areas:
+            "heady"
+            "navvy"
+            "mainy"
+            "aside1"
+            "aside2"
+            "footy";
+    }
+}
+
+header {
+    grid-area: heady;
+    background: var(--panel);
+}
+
+nav {
+    grid-area: navvy;
+    background: var(--panel);
+}
+
+main {
+    grid-area: mainy;
+    background: var(--panel);
+    max-height: 100%;
+}
+
+#aside1 {
+    grid-area: aside1;
+    background: var(--panel);
+}
+
+#aside2 {
+    grid-area: aside2;
+    background: var(--panel);
+}
+
+footer {
+    grid-area: footy;
+    background: var(--panel);
+}
+
+nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+nav ul li {
+  list-style: none
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 5px;
+  margin: 5px;
+}
+
 
 img {
     max-width: 100%;
     border-radius: 8px;
-    border: solid 2px #FDA;
+    border: solid 2px var(--foreground);
 }
 
 a {
@@ -37,5 +140,5 @@ a {
 }
 
 a:visited {
-    color: #FDA;
+    color: var(--foreground);
 }
