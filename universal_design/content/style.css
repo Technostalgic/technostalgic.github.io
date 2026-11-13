@@ -148,3 +148,15 @@ a {
 a:visited {
     color: var(--foreground);
 }
+
+#aside2 ul li {
+    margin-bottom: 10px;
+}
+
+main p {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
