@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;700&display=swap');
+
+:root {
+    --background: #000000;
+    --panel: #19202A;
+    --foreground: #A8BBD0;
+    --faded: #A0B0D020;
+}
+
 *,
 *:before,
 *:after {
@@ -12,11 +21,13 @@ main,
 aside,
 footer {
     padding: 1.5em;
-    border: 1px black solid;
+    border: 1px var(--faded) solid;
 }
 
 body {
-  background: yellow;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: monospace;
   font-weight: 300;
   font-size: 15px;
 }
@@ -29,12 +40,14 @@ footer {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    background: rgb(175, 222, 176);
+    background: var(--background);
     display: grid;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     grid-template-columns:
         1fr 2fr 1fr;
+    grid-template-rows:
+        auto auto 1fr 1fr 1fr auto;
     grid-template-areas:
         "heady     heady     heady"
         "navvy     navvy     navvy"
@@ -48,6 +61,8 @@ footer {
     .container {
         grid-template-columns:
             1fr 1fr;
+        grid-template-rows:
+            auto auto auto 1fr auto;
         grid-template-areas:
             "heady heady"
             "navvy navvy"
@@ -61,45 +76,47 @@ footer {
     .container {
         grid-template-columns:
             1fr;
+        grid-template-rows:
+            auto 1fr auto auto auto auto;
         grid-template-areas:
             "heady"
+            "navvy"
             "mainy"
             "aside1"
             "aside2"
-            "navvy"
             "footy";
     }
 }
 
 header {
     grid-area: heady;
-    background: rgb(254, 218, 175);
+    background: var(--panel);
 }
 
 nav {
     grid-area: navvy;
-    background: rgb(232, 206, 236);
+    background: var(--panel);
 }
 
 main {
     grid-area: mainy;
-    background: rgb(240, 234, 182);
+    background: var(--panel);
     max-height: 100%;
 }
 
 #aside1 {
     grid-area: aside1;
-    background: rgb(241, 202, 174);
+    background: var(--panel);
 }
 
 #aside2 {
     grid-area: aside2;
-    background: rgb(191, 226, 246);
+    background: var(--panel);
 }
 
 footer {
     grid-area: footy;
-    background: rgb(171, 171, 171);
+    background: var(--panel);
 }
 
 nav ul {
@@ -116,4 +133,38 @@ nav ul li a {
   display: block;
   padding: 10px 5px;
   margin: 5px;
+}
+
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    border: solid 2px var(--foreground);
+}
+
+a {
+    color: #E6EEF7;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: var(--foreground);
+}
+
+#aside2 ul li {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Orbitron', sans-serif;
 }
